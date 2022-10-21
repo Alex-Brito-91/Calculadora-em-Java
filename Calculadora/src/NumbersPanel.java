@@ -67,8 +67,15 @@ public class NumbersPanel extends JPanel implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		
+		if(txtText.getText().length() == 20) {
+			return;
+		}
+		
+		JButton btn = (JButton) e.getSource();
+		String number = btn.getText();
+		txtText.setText(txtText.getText() + number);
 	}
 
 }

@@ -10,6 +10,10 @@ public class OperationsPanel extends JPanel implements ActionListener {
 	
 	private JTextField txtText;
 	
+	private char op;
+	private double value1;
+	private double value2;
+	
 	private JButton btnAdd;
 	private JButton btnSub;
 	private JButton btnMult;
@@ -48,7 +52,42 @@ public class OperationsPanel extends JPanel implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
+		if (txtText.getText().isEmpty()) {
+			return;
+		}
+		
+		JButton btn = (JButton) e.getSource();
+		
+		if (btn == btnClear) {
+			op = '\u0000';
+			txtText.setText("");
+		} else if (btn == btnEq) {
+			value2 = Double.parseDouble(txtText.getText());
+			
+			double result = 0.0;
+			
+			if (op == '+') {
+				result = value1 + value2;
+			} else if (op == '-') {
+				result = value1 - value2;
+			} else if (op == '*') {
+				result = value1 * value2;
+			} else if (op == '/') {
+				result = value1 / value2;
+			}
+			
+			txtText.setText(String.valueOf(result));
+			op = '\u0000'; 
+			value1 = result;
+			value2 = 0;
+			
+		} else {
+			
+			op = btn.getText().charAt(0);
+			value1 = Double.parseDouble(txtText.getText());
+			txtText.setText("");
+		}
 		
 	}
 
