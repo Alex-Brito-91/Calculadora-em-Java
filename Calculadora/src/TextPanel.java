@@ -11,7 +11,6 @@ public class TextPanel extends JPanel {
 	private JTextField txtNumber;
 
 	public TextPanel() {
-		setLayout(new FlowLayout());
 
 		txtNumber = new JTextField(25);
 		txtNumber.setHorizontalAlignment(JTextField.RIGHT);
