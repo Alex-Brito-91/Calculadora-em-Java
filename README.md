@@ -16,7 +16,7 @@ A calculadora tem funções simples como: **Adição**, **Subtração**, **Multi
  - Abra o Terminal na mesma pasta em que se encontra o arquivo e digite:
  - `$ java -jar Calculadora.jar`
 
- - ![A calculadora aparecerá logo em seguida:](https://drive.google.com/file/d/1tVaCut8xbTg9tV9Nzt81_eq6vamMQIni/view?usp=sharing)
+ - A calculadora aparecerá logo em seguida
 
 ## Usando a Calculadora
 
